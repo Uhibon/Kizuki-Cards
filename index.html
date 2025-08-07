@@ -1,97 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>August 1 Sentences</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tree Slideshow</title>
   <style>
-    body, html {
+    body {
       margin: 0;
-      padding: 0;
-      background: #ffffff;
       font-family: sans-serif;
-    }
-    .swiper {
-      width: 100%;
-      height: 100vh;
-    }
-    .swiper-slide {
+      background: url('forest-background.jpg') center center / cover no-repeat fixed;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #fff;
+      height: 100vh;
+      touch-action: pan-y;
     }
-    .swiper-slide img {
-      width: 90%;
-      height: auto;
+    .slideshow-container {
+      position: relative;
+      max-width: 90%;
+      max-height: 90vh;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 16px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+    }
+    .slide {
+      display: none;
+      text-align: center;
+    }
+    .slide img {
+      width: 100%;
       max-height: 90vh;
       object-fit: contain;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .active {
+      display: block;
+    }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+      background-color: rgba(0,0,0,0.5);
+      user-select: none;
+      border-radius: 3px;
+      z-index: 10;
+    }
+    .next {
+      right: 0;
+    }
+    .prev {
+      left: 0;
     }
   </style>
 </head>
 <body>
-  <div class="swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="000_01.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_02.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_03.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_04.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_05.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_06.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_07.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_08.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_09.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_10.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_11.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_12.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_13.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_14.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_15.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_16.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_17.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_18.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_19.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_20.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_21.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_22.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_23.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_24.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_25.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_26.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_27.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_28.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_29.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_30.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_31.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_32.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_33.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_34.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_35.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_36.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_37.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_38.jpg" alt="Slide"></div>
-      <div class="swiper-slide"><img src="000_39.jpg" alt="Slide"></div>
-    </div>
-    <div class="swiper-pagination"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  </div>
 
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper('.swiper', {
-      loop: false,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
+<div class="slideshow-container" id="slideshow">
+  <!-- Slides -->
+</div>
+
+<!-- Navigation -->
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+<script>
+  let slideIndex = 0;
+  const container = document.getElementById("slideshow");
+
+  for (let i = 1; i <= 42; i++) {
+    const imgNumber = String(i).padStart(2, '0');
+    const slide = document.createElement('div');
+    slide.className = 'slide';
+    slide.innerHTML = `<img src="${imgNumber}.jpg" alt="Tree Slide ${i}">`;
+    container.appendChild(slide);
+  }
+
+  const slides = document.getElementsByClassName("slide");
+
+  function showSlide(index) {
+    for (let slide of slides) {
+      slide.classList.remove("active");
+    }
+    slides[index].classList.add("active");
+  }
+
+  function plusSlides(n) {
+    slideIndex = (slideIndex + n + slides.length) % slides.length;
+    showSlide(slideIndex);
+  }
+
+  // Initialize first slide
+  showSlide(slideIndex);
+
+  // Touch swipe support
+  let startX = 0;
+
+  container.addEventListener("touchstart", function(e) {
+    startX = e.touches[0].clientX;
+  });
+
+  container.addEventListener("touchend", function(e) {
+    const endX = e.changedTouches[0].clientX;
+    const diffX = startX - endX;
+    if (Math.abs(diffX) > 50) {
+      if (diffX > 0) {
+        plusSlides(1); // swipe left
+      } else {
+        plusSlides(-1); // swipe right
       }
-    });
-  </script>
+    }
+  });
+</script>
+
 </body>
 </html>
