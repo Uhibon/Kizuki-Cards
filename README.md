@@ -5,7 +5,7 @@
 ![38](https://github.com/user-attachments/assets/030c50bb-e051-404f-9a41-00c5ff83dad9)
 ![37](https://github.com/user-attachments/assets/6458b7ea-8ccf-4cc2-ae00-d260d7a77086)
 ![36](https://github.com/user-attachments/assets/2497b2a5-50de-4c79-b099-3fe329a22ec2)
-![35](https://github.com/user-attachments/assets/73fc96ac-b2e7-4ceb-988e-6df3fe84372f)
+![35](https://github.com/user-attachments/assets/fca4f386-14d5-4e91-a5e9-9044a9af8b3e)
 ![34](https://github.com/user-attachments/assets/581e4c26-0aec-4ac4-a1b7-abc4892c0aaf)
 ![33](https://github.com/user-attachments/assets/a2eaa959-0da5-4eb0-ab7f-9290417d0280)
 ![32](https://github.com/user-attachments/assets/60fde0eb-700e-4eb1-87e5-65ac872b4556)
